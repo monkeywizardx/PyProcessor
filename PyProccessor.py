@@ -90,7 +90,7 @@ else:
     '''
     preproccesor_input = open(argv[1], 'r')
     preprocessor_output = open(argv[2], 'w')
-    preprocessor_input_array = fileToString(preprocessorInput)
+    preprocessor_input_array = fileToString(preprocessor_input)
     preprocessor_input_array = findAllMacros(preprocessor_input_array)
     preprocessor_input_array = macroReplacement(preprocessor_input_array)
     for line in preprocessor_input_array:
