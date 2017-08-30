@@ -50,7 +50,7 @@ def findAllMacros(file_array):
     '''
     non_preprocessed_lines = []
     for line in file_array:
-        checked_line = line.split()
+        checked_line = line.split().append('')
         if checked_line[0].upper() == '!DEFINE':
             macros[checked_line[1]] = ' '.join(checked_line[2:len(checked_line)])
         else:
@@ -88,7 +88,7 @@ else:
     Next, it finds the macros, then calls the replacement.
     Finally, it writes all the new lines into the output file.
     '''
-    preproccesor_input = open(argv[1], 'r')
+    preprocessor_input = open(argv[1], 'r')
     preprocessor_output = open(argv[2], 'w')
     preprocessor_input_array = fileToString(preprocessor_input)
     preprocessor_input_array = findAllMacros(preprocessor_input_array)
