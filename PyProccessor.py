@@ -50,7 +50,8 @@ def findAllMacros(file_array):
     '''
     non_preprocessed_lines = []
     for line in file_array:
-        checked_line = line.split().append('')
+        checked_line = line.split()
+        checked_line.append('')
         if checked_line[0].upper() == '!DEFINE':
             macros[checked_line[1]] = ' '.join(checked_line[2:len(checked_line)])
         else:
